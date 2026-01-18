@@ -1,0 +1,87 @@
+<view class="page">
+  <view class="hero">
+    <view class="logo">◆</view>
+    <view class="hero-text">
+      <text class="title">无限骰子</text>
+      <text class="subtitle">INFINITE DICE • 每一次投掷都是奇迹</text>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="card-title"><text class="emoji">🎮</text> 怎么玩？</view>
+    <view class="list">
+      <text>1. 定数 (Roll N)：先投 1 个骰子，点数是几，你就获得几颗骰子。</text>
+      <text>2. 对决 (Score)：投掷手中的骰子，计算总分。</text>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="card-title"><text class="emoji">🔥</text> 欧皇倍率 (N &gt; 3)</view>
+    <view class="table">
+      <view class="row header">
+        <text>牌型</text>
+        <text>奖励</text>
+        <text>说明</text>
+      </view>
+      <view class="row">
+        <text>❤️ 天选</text>
+        <view class="pill pink">520分</view>
+        <text>全 1 或 全 6（封顶）</text>
+      </view>
+      <view class="row">
+        <text>🐕 狗子</text>
+        <view class="pill yellow">× 5</view>
+        <text>点数全部相同</text>
+      </view>
+      <view class="row">
+        <text>🐍 顺子</text>
+        <view class="pill green">× 4</view>
+        <text>点数连续（如 2345）</text>
+      </view>
+      <view class="row">
+        <text>🌀 纯净</text>
+        <view class="pill cyan">× 2</view>
+        <text>全是奇数 或 全是偶数</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="card-title"><text class="emoji">💣</text> 绝境翻盘 (N &lt; 3)</view>
+    <view class="alert">
+      <text class="alert-title">触发【无限连击】机制：</text>
+      <text>当开局只获得 1 或 2 颗骰子时，只要投出 6，该骰子计分并裂变出新的投掷机会！</text>
+      <text class="muted">（理论上分数无上限）</text>
+    </view>
+  </view>
+
+  <view class="card play">
+    <view class="controls">
+      <button class="primary" bindtap="onRollN">Roll N</button>
+      <button class="secondary" bindtap="onRollScore">Score</button>
+      <button class="ghost" bindtap="onReset">Reset</button>
+    </view>
+    <view class="status">
+      <view>
+        <text class="label">当前骰子数</text>
+        <text class="value">{{diceCountDisplay}}</text>
+      </view>
+      <view>
+        <text class="label">最新得分</text>
+        <text class="value">{{score}}</text>
+      </view>
+      <view>
+        <text class="label">累计总分</text>
+        <text class="value">{{total}}</text>
+      </view>
+    </view>
+    <view class="dice-area">
+      <view class="dice" wx:for="{{diceValues}}" wx:key="index">{{item}}</view>
+    </view>
+    <view class="log">
+      <view wx:for="{{logs}}" wx:key="index">{{item}}</view>
+    </view>
+  </view>
+
+  <view class="footer">Good Luck! 🍀 今晚谁是欧皇？</view>
+</view>

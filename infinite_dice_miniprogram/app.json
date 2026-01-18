@@ -1,0 +1,9 @@
+{
+  "pages": ["pages/index/index"],
+  "window": {
+    "navigationBarTitleText": "无限骰子",
+    "navigationBarBackgroundColor": "#14182b",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#14182b"
+  }
+}
