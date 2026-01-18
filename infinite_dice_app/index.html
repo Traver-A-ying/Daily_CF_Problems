@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>无限骰子 - Infinite Dice</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div class="logo">◆</div>
+        <div>
+          <h1>无限骰子</h1>
+          <p>INFINITE DICE • 每一次投掷都是奇迹</p>
+        </div>
+      </header>
+
+      <section class="card">
+        <h2><span class="emoji">🎮</span> 怎么玩？</h2>
+        <ol>
+          <li><strong>定数 (Roll N)：</strong> 先投 1 个骰子，点数是几，你就获得几颗骰子。</li>
+          <li><strong>对决 (Score)：</strong> 投掷手中的骰子，计算总分。</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2><span class="emoji">🔥</span> 欧皇倍率 (N &gt; 3)</h2>
+        <div class="table">
+          <div class="row header">
+            <span>牌型</span>
+            <span>奖励</span>
+            <span>说明</span>
+          </div>
+          <div class="row">
+            <span>❤️ 天选</span>
+            <span class="pill pink">520分</span>
+            <span>全 1 或 全 6（封顶）</span>
+          </div>
+          <div class="row">
+            <span>🐕 狗子</span>
+            <span class="pill yellow">× 5</span>
+            <span>点数全部相同</span>
+          </div>
+          <div class="row">
+            <span>🐍 顺子</span>
+            <span class="pill green">× 4</span>
+            <span>点数连续（如 2345）</span>
+          </div>
+          <div class="row">
+            <span>🌀 纯净</span>
+            <span class="pill cyan">× 2</span>
+            <span>全是奇数 或 全是偶数</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2><span class="emoji">💣</span> 绝境翻盘 (N &lt; 3)</h2>
+        <div class="alert">
+          <p><strong>触发【无限连击】机制：</strong></p>
+          <p>当开局只获得 1 或 2 颗骰子时，只要投出 6，该骰子计分并裂变出新的投掷机会！</p>
+          <p class="muted">（理论上分数无上限）</p>
+        </div>
+      </section>
+
+      <section class="play card">
+        <div class="controls">
+          <button id="roll-n" class="primary">Roll N</button>
+          <button id="roll-score" class="secondary">Score</button>
+          <button id="reset" class="ghost">Reset</button>
+        </div>
+        <div class="status">
+          <div>
+            <div class="label">当前骰子数</div>
+            <div id="dice-count" class="value">-</div>
+          </div>
+          <div>
+            <div class="label">最新得分</div>
+            <div id="score" class="value">0</div>
+          </div>
+          <div>
+            <div class="label">累计总分</div>
+            <div id="total" class="value">0</div>
+          </div>
+        </div>
+        <div class="dice-area" id="dice-area"></div>
+        <div class="log" id="log"></div>
+      </section>
+
+      <footer class="footer">Good Luck! 🍀 今晚谁是欧皇？</footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
